@@ -1,0 +1,107 @@
+.d-none {
+    display: none;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify--space-between {
+    justify-content: space-between;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-55 {
+    width: 55%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-53 {
+    width: 53%;
+}
+
+.w-47 {
+    width: 47%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.hidden-d {
+    @include size(allDesktop) {
+        display: none !important;
+    }
+}
+
+.hidden-m {
+    @include size(allMobile) {
+        display: none;
+    }
+}
+
+.v-hidden {
+    visibility: hidden;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

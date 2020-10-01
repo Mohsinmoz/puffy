@@ -1,0 +1,51 @@
+// Responsive Settings
+
+$screenXs: 576px;
+$screenSm: 768px;
+$screenMd: 992px;
+$screenLg: 1280px;
+
+$screenSmMin: 768px;
+$screenMdMin: 992px;
+$screenLgMin: 1280px;
+
+$screenXsMax: 767px;
+$screenSmMax: 991px;
+$screenMdMax: 1279px;
+
+$containerLg: 1280px;
+
+// Bootstrap queries
+$bs667: 667px;
+
+@mixin size($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $screenXsMax) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: $screenSmMin) and (max-width: $screenSmMax) {
+      @content;
+    }
+  } @else if $media == allMobile {
+    @media only screen and (max-width: $screenSmMax) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: $screenMdMin) and (max-width: $screenMdMax) {
+      @content;
+    }
+  } @else if $media == wide {
+    @media only screen and (min-width: $screenLgMin) {
+      @content;
+    }
+  } @else if $media == allDesktop {
+    @media only screen and (min-width: $screenMdMin) {
+      @content;
+    }
+  }
+}
+
+*:focus {
+  outline: none !important
+}

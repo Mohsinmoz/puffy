@@ -1,0 +1,75 @@
+@mixin vendor-prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+    position: absolute;
+
+    @if $position == 'vertical' {
+        top: 50%;
+        @include vendor-prefix(transform, translateY(-50%), webkit ms);
+    }
+    @else if $position == 'horizontal' {
+        left: 50%;
+        @include vendor-prefix(transform, translateY(-50%), webkit ms);
+    }
+    @else if $position == 'both' {
+        top: 50%;
+        left: 50%;
+        @include vendor-prefix(transform, translate(-50%, -50%), webkit ms);
+    }
+}
+
+@mixin flex__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@mixin caption__box {
+    background: $white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 1px 0px 5px #0000007a;
+    z-index: 999;
+    @include size(allMobile) {
+        padding: 5px 0px;
+        width: 120px;
+        font-size: 10px;
+    }
+}
+
+@mixin caption__plus {
+    content: "+";
+    position: absolute;
+    left: -35px;
+    top: 3px;
+    color: $darkblue;
+    background: $white;
+    border-radius: 15px;
+    padding: 0 7px;
+    box-shadow: 1px 0px 5px #0000007a;
+    @include size(allMobile) {
+        left: auto;
+        right: -25px;
+        padding: 0 5px;
+    }
+}
+
+@mixin caption__plus--right {
+    @include size(allMobile) {
+        left: -25px;
+        right: auto;
+    }
+}

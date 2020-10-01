@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@mixin h1($font-weight: 700) {
+    font-size: 70px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    @include size(allMobile) {
+        font-size: 24px;
+        font-weight: $font-weight;
+    }
+}
+
+@mixin h2($font-weight: 700) {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: none;
+
+    @include size(allMobile) {
+        font-size: 18px;
+        font-weight: $font-weight;
+    }
+}
+
+@mixin h3($font-weight: 700) {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: none;
+
+    @include size(allMobile) {
+        font-size: 16px;
+        font-weight: $font-weight;
+    }
+}
+
+@mixin font-button($font-weight: 400) {
+    font-size: 15px;
+    font-weight: $font-weight;
+    text-transform: uppercase;
+
+    @include size(allMobile) {
+        font-size: 12px;
+    }
+}
+
+@mixin font-subtitle($font-weight: 400) {
+    font-size: 16px;
+    font-weight: $font-weight;
+    text-transform: uppercase;
+
+    @include size(allMobile) {
+        font-size: 12px;
+    }
+}
+
+@mixin font-body($font-weight: 400) {
+    font-size: 15px;
+    text-transform: none;
+    font-weight: $font-weight;
+
+    @include size(allMobile) {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    @include font-body();
+}
+
+h1 {
+    @include h1();
+}
+
+h2 {
+    @include h2();
+}
+
+h3 {
+    @include h3();
+}
+
+p {
+    @include font-body();
+}
+
+.button {
+    @include font-button(400);
+    background-color: $green;
+    border: 3px solid $greenborder;
+    color: $white;
+    padding: 7px 40px;
+    border-radius: 18px;
+    transition: all .3s;
+    &:hover {
+        background-color: $greenhover;
+        border-color: $greenborderhover;
+    }
+}
+
+a {
+    color: $black;
+}

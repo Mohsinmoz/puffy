@@ -1,0 +1,443 @@
+@import "resets";
+@import "colors";
+@import "breakpoints";
+@import "mixins";
+@import "typography";
+@import "grid";
+@import "global";
+
+.main-banner {
+    &__image {
+        width: 100%;
+    }
+    &__content {
+        @include center(both);
+        @include size(allMobile) {
+            padding: 0 40px;
+        }
+        &-heading {
+            color: $white;
+            font-weight: 400;
+        }
+
+        &-para {
+            color: $white;
+            margin: 0 auto 40px;
+            max-width: 100%;
+            width: 600px;
+            @include size(allMobile) {
+                margin: 0 auto 30px;
+            }
+        }
+    }
+}
+
+.sleep-schedule {
+    &__heading {
+        margin: 40px 0 80px;
+        color: $darkblue;
+        @include size(allMobile) {
+            margin: 40px 0 15px;
+        }
+    }
+
+    &__para {
+        margin-bottom: 40px;
+        max-width: 100%;
+        width: 600px;
+        text-align: justify;
+        color: $dimblue;
+        @include size(allMobile) {
+            text-align: center;
+        }
+    }
+
+    &__genter-img {
+        padding: 0 80px;
+        @include size(allMobile) {
+            padding: 0 40px;
+        }
+        img {
+            @include center(vertical);
+            transform: translateY(-57%);
+            max-width: 100%;
+            width: 400px;
+            @include size(allMobile) {
+                position: unset;
+                top: auto;
+                transform: unset;
+                width: 100%;
+            }
+        }
+    }
+    
+    &__gender {
+        justify-content: flex-end;
+        @include size(allMobile) {
+            justify-content: center;
+            margin-top: 25px;
+        }
+    }
+    
+    &__genter-title {
+        @include font-body;
+        padding: 0 48px;
+        @include size(allMobile) {
+            padding: 0 30px 10px;
+        }
+        &--male {
+            color: $darkblue;
+            @include size(allMobile) {
+                font-weight: bold;
+            }
+        }
+        &--female {
+            color: $lightblue;
+            @include size(allMobile) {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__list {
+        @include font-body;
+        color: $darkblue;
+        align-items: center;
+        p {
+            margin-bottom: 5px;
+            @include size(allMobile) {
+                text-align: center;
+                width: 100%;
+                margin: 10px 0;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__stats {
+        &-male {
+            background-color: $darkblue;
+            color: $white;
+            padding: 10px 20px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            margin-bottom: 5px;
+        }
+        &-female {
+            background-color: $lightblue;
+            color: $white;
+            padding: 10px 20px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.comparison {
+    &__heading {
+        border-top: 1px solid $grey;
+        margin: 150px 0 80px;
+        padding: 80px 0 0;
+        color: $darkblue;
+        @include size(allMobile) {
+            margin: 40px 0 30px;
+            padding: 40px 0 0;
+        }
+    }
+    
+    &__content {
+        text-align: center;
+        h3 {
+            color: $darkblue;
+        }
+        p {
+            color: $dimblue;
+        }
+    }
+    
+    &__img {
+        top: 170px;
+        @include size(allMobile) {
+            top: 120px;
+        }
+        &--left {
+            @include size(allMobile) {
+                left: -80px;
+            }
+        }
+
+        &--right {
+            @include size(allMobile) {
+                right: -20px;
+                .comparison__img-one {
+                    &__caption {
+                        top: 61px;
+                        left: 33px;
+                        &::before {
+                            @include caption__plus;
+                            @include caption__plus--right;
+                        }
+                    }
+                }
+                .comparison__img-two {
+                    &__caption {
+                        top: 44px;
+                        left: 33px;
+
+                        &::before {
+                            @include caption__plus;
+                            @include caption__plus--right;
+                        }
+                    }
+                }
+                .comparison__img-three {
+                    &__caption {
+                        left: 33px;
+
+                        &::before {
+                            @include caption__plus;
+                            @include caption__plus--right;
+                        }
+                    }
+                }
+                .comparison__img-fourth {
+                    &__caption {
+                        top: 25px;
+                        left: 33px;
+
+                        &::before {
+                            @include caption__plus;
+                            @include caption__plus--right;
+                        }
+                    }
+                }
+            }
+        }
+        img {
+            width: 100%;
+            @include size(allMobile) {
+                width: 140%;
+            }
+        }
+        
+        &-one {
+            top: 0;
+            &__caption {
+                top: 175px;
+                left: 215px;
+                @include size(allMobile) {
+                    top: 61px;
+                    left: 70px;
+                }
+                @include caption__box;
+                &::before {
+                    @include caption__plus;
+                }
+
+                &:hover p {
+                    display: block;
+                }
+
+                &:hover::before {
+                    content: "-";
+                    padding: 0 10px 2px;
+                }
+
+                h5 {
+                    margin: 0;
+                    color: $darkblue;
+                }
+            }
+        }
+
+        &-two {
+            top: -40px;
+            @include size(allMobile) {
+                top: -25px;
+            }
+            &__caption {
+                top: 140px;
+                left: 215px;
+                @include size(allMobile) {
+                    top: 45px;
+                    left: 70px;
+                }
+                @include caption__box;
+                &::before {
+                    @include caption__plus;
+                }
+
+                &:hover p {
+                    display: block;
+                }
+
+                &:hover::before {
+                    content: "-";
+                    padding: 0 10px 2px;
+                }
+
+                h5 {
+                    margin: 0;
+                    color: $darkblue;
+                }
+            }
+        }
+
+        &-three {
+            top: -110px;
+            @include size(allMobile) {
+                top: -60px;
+            }
+            &__caption {
+                top: 140px;
+                left: 215px;
+                @include size(allMobile) {
+                    top: 42px;
+                    left: 70px;
+                }
+                @include caption__box;
+                &::before {
+                    @include caption__plus;
+                }
+                &:hover p {
+                    display: block;
+                }
+                &:hover::before {
+                    content: "-";
+                    padding: 0 10px 2px;
+                }
+                h5 {
+                    margin: 0;
+                    color: $darkblue;
+                }
+            }
+
+            &--lux {
+                .comparison__img-three__caption {
+                    top: 135px;
+                    padding: 0 0;
+                    @include size(allMobile) {
+                        top: 35px;
+                    }
+                    &::before {
+                        @include size(allMobile) {
+                            top: 9px;
+                        }
+                    }
+                    span {
+                        display: block;
+                        background-color: $darkblue;
+                        color: $white;
+                        font-size: 8px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        margin-bottom: 5px;
+                    }
+
+                    &:hover p {
+                        display: block;
+                        padding: 0 15px 5px;
+                    }
+                }
+            }
+        }
+
+        &-fourth {
+            top: -162px;
+            @include size(allMobile) {
+                top: -100px;
+            }
+            &__caption {
+                top: 160px;
+                left: 215px;
+                @include caption__box;
+
+                &::before {
+                    @include caption__plus;
+                }
+
+                &:hover p {
+                    display: block;
+                }
+
+                &:hover::before {
+                    content: "-";
+                    padding: 0 10px 2px;
+                }
+
+                h5 {
+                    margin: 0;
+                    color: $darkblue;
+                }
+            }
+        }
+    }
+
+    &__price-container {
+        margin: 480px 0 150px;
+        @include size(allMobile) {
+            margin: 250px 0 50px;
+        }
+    }
+
+    &__price {
+        margin-bottom: 60px;
+        @include flex__row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        @include size(allMobile) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__price-block {
+        color: $red;
+        width: 30%;
+        @include h3;
+        position: relative;
+        @include size(allMobile) {
+            width: 100%;
+        }
+        &:first-child:before {
+            content: "or";
+            position: absolute;
+            top: 17px;
+            right: -9px;
+            color: $dimblue;
+            font-size: 18px;
+            background-color: $white;
+            z-index: 1;
+            @include size(allMobile) {
+                top: 70px;
+                right: 65px;
+                padding: 0 5px;
+            }
+        }
+        &:last-child:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            border-right: 1px solid $dimblue;
+            height: 100%;
+            @include size(allMobile) {
+                top: 12px;
+                right: 0px;
+                border-top: 1px solid $dimblue;
+                border-right: none;
+            }
+        }
+        span {
+            display: block;
+            color: $dimblue;
+            @include font-body;
+            &:first-child {
+                @include size(allMobile) {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
